@@ -28,7 +28,7 @@ pipeline {
         stage('Push Docker Images') {
             steps {
                 script{
-                    docker.withRegistry('', '808df1a5-87d1-408d-93b5-d8e40e823c08') {
+                    docker.withRegistry('', 'DockerHubCred') {
                     sh 'docker tag calculator anuja-gode/calculator:latest'
                     sh 'docker push anuja-gode/calculator'
                     }
